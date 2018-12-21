@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { firestore } from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-bootstrap-timepicker-with-firebase-timestamp';
+  model: firestore.Timestamp;
 }

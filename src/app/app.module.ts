@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NgbDateAdapter, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDateFirestoreAdapter } from './ngb-date-firestore-adapter.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { NgbDateFirestoreAdapter } from './ngb-date-firestore-adapter.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     NgbModule
   ],
   providers: [
