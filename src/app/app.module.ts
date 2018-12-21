@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateAdapter, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateFirestoreAdapter } from './ngb-date-firestore-adapter.service';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    { provide: NgbDateAdapter, useClass: NgbDateFirestoreAdapter }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
