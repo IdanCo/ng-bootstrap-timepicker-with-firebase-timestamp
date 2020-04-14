@@ -26,6 +26,9 @@ export class NgbDateFirestoreAdapter extends NgbDateAdapter<firestore.Timestamp>
    * Converts a NgbDateStruct to a Firestore TimeStamp
    */
   toModel(ngbDate: NgbDateStruct): firestore.Timestamp {
+    if (!ngbDate) {
+      return null;
+    }
     const jsDate = new Date(
       ngbDate.year ? ngbDate.year : new Date().getFullYear(),
       ngbDate.month ? ngbDate.month - 1 : new Date().getMonth() - 1,
